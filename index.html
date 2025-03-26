@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Library Book Management</h1>
+        
+        <!-- Add Book Form -->
+        <div class="form-section">
+            <h2>Add New Book</h2>
+            <form id="addBookForm">
+                <label for="bookId">Book ID:</label>
+                <input type="text" id="bookId" name="bookId" required>
+
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
+
+                <label for="genre">Genre:</label>
+                <input type="text" id="genre" name="genre">
+
+                <label for="status">Availability Status:</label>
+                <select id="status" name="status" required>
+                    <option value="Available">Available</option>
+                    <option value="Checked Out">Checked Out</option>
+                </select>
+
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+
+        <!-- View Books -->
+        <div class="view-books">
+            <h2>All Books</h2>
+            <button onclick="displayBooks()">Load Books</button>
+            <div id="bookList"></div>
+        </div>
+
+        <!-- Update Book Form -->
+        <div id="updateFormSection" class="update-form-section">
+            <h2>Update Book Details</h2>
+            <form id="updateBookForm">
+                <label for="updateTitle">Title:</label>
+                <input type="text" id="updateTitle" name="updateTitle" required>
+
+                <label for="updateAuthor">Author:</label>
+                <input type="text" id="updateAuthor" name="updateAuthor" required>
+
+                <label for="updateGenre">Genre:</label>
+                <input type="text" id="updateGenre" name="updateGenre">
+
+                <label for="updateStatus">Availability Status:</label>
+                <select id="updateStatus" name="updateStatus" required>
+                    <option value="Available">Available</option>
+                    <option value="Checked Out">Checked Out</option>
+                </select>
+
+                <input type="hidden" id="updateBookId">
+                <button type="submit">Update Book</button>
+                <button type="button" onclick="closeUpdateForm()">Cancel</button>
+            </form>
+        </div>
+
+        <!-- Search Book Form -->
+        <div class="search-section">
+            <h2>Search Book</h2>
+            <input type="text" id="searchInput" placeholder="Enter Book ID or Title" oninput="searchBook()">
+            <div id="searchResults"></div>
+        </div>
+
+        <!-- Close Program Button -->
+        <div class="close-program">
+            <button onclick="closeProgram()">Close Program</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
